@@ -41,7 +41,7 @@ export default function Recommender() {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 20000); // 20 seconds
 
-        const res = await fetch("https://flask-backend-2hp7.onrender.com/recommend", {
+        const res = await fetch("https://api-g7q1.onrender.com/recommend", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
