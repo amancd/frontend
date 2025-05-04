@@ -38,7 +38,7 @@ export default function Recommender() {
     setResponse(null);
 
     try {
-      const res = await fetch("http://localhost:8000/recommend", {
+      const res = await fetch("https://flask-backend-x3c7.onrender.com/recommend", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
