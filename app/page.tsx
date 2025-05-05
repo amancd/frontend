@@ -22,7 +22,7 @@ export default function Home() {
             </h1>
             <div className="flex items-center space-x-4">
               <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-800 text-white">
-                Beta
+                <a href="https://github.com/amancd/SHL-Recommendation-System/">Github</a>
               </span>
             </div>
           </div>
