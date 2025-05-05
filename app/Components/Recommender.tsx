@@ -84,7 +84,7 @@ export default function Recommender() {
 
       setResponse(normalizedData);
     } catch (err) {
-      setError("Failed to get recommendations. Please try again.");
+      setError("Onrender API service down, please try again later 😭");
       console.error(err);
     } finally {
       setIsLoading(false);
