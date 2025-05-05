@@ -50,12 +50,6 @@ export default function Recommender() {
     throw new Error(`Server responded with ${res.status}`);
   }
 
-  const data = await res.json();
-  // use `data` here
-} catch (error) {
-  console.error("Fetch error:", error);
-}
-
       const data: RecommendationResponse = await res.json();
 
       const normalizedData: RecommendationResponse = {
