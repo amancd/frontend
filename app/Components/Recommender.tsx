@@ -37,23 +37,24 @@ export default function Recommender() {
     setError(null);
     setResponse(null);
 
-    try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 20000); // 20 seconds
+   try {
+  const res = await fetch("https://api-g7q1.onrender.com/recommend", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ job_description: query }),
+  });
 
-        const res = await fetch("https://api-g7q1.onrender.com/recommend", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ job_description: query }),
-          signal: controller.signal,
-        });
-        clearTimeout(timeoutId);
+  if (!res.ok) {
+    throw new Error(`Server responded with ${res.status}`);
+  }
 
-      if (!res.ok) {
-        throw new Error(`Server responded with ${res.status}`);
-      }
+  const data = await res.json();
+  // use `data` here
+} catch (error) {
+  console.error("Fetch error:", error);
+}
 
       const data: RecommendationResponse = await res.json();
 
